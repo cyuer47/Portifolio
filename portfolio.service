@@ -1,0 +1,19 @@
+[Unit]
+Description=Iven Boxem Personal Portfolio Site
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/portfolio
+Environment="NODE_ENV=production"
+Environment="PORT=3000"
+Environment="DB_PATH=./data/site.db"
+ExecStart=/usr/bin/node /var/www/portfolio/server.js
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
