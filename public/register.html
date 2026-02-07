@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">IB</div>
+          <div><h3 style="margin: 0">Registratie</h3></div>
+        </div>
+      </div>
+      <div class="card">
+        <form id="f">
+          <input name="username" placeholder="Gebruikersnaam" required />
+          <input
+            name="password"
+            type="password"
+            placeholder="Wachtwoord"
+            required
+          />
+          <input name="name" placeholder="Naam (optioneel)" />
+          <input name="code" placeholder="Aanmeldcode (éénmalig)" required />
+          <div style="display: flex; gap: 8px">
+            <button class="btn" type="submit">Registreer</button
+            ><a href="/">Terug</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/register.js"></script>
+  </body>
+</html>

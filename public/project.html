@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Project</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand" onclick="window.location = '/'">
+          <div class="logo">IB</div>
+          <div>
+            <h3 style="margin: 0">Portfolio</h3>
+            <div class="subtitle">Projecten & portfolio</div>
+          </div>
+        </div>
+        <div>
+          <nav><a href="/">Projecten</a></nav>
+        </div>
+      </div>
+
+      <div class="breadcrumb">
+        <a href="/">Projecten</a>
+        <span class="separator">/</span>
+        <span id="project-title">Project</span>
+      </div>
+
+      <div class="card">
+        <h2 id="title">Project Title</h2>
+        <div class="project-meta">
+          <span id="status" class="tag">Status</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Beschrijving</h3>
+        <p id="description"></p>
+      </div>
+
+      <div id="content-section" class="card" style="display: none">
+        <h3>Details</h3>
+        <div id="content"></div>
+      </div>
+
+      <div id="release-notes-section" class="card" style="display: none">
+        <h3>Release Notes</h3>
+        <div id="release-notes"></div>
+      </div>
+
+      <div id="links-section" class="card" style="display: none">
+        <h3>Links</h3>
+        <div id="links"></div>
+      </div>
+
+      <div id="members-section" class="card" style="display: none">
+        <h3>Team</h3>
+        <div id="members" class="grid"></div>
+      </div>
+    </div>
+
+    <script src="/project.js"></script>
+  </body>
+</html>

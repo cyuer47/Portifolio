@@ -1,0 +1,26 @@
+{
+  "name": "personal-portfolio-site",
+  "version": "1.0.0",
+  "description": "Lightweight personal website & portfolio with Node.js + SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "init-db": "node init_db.js",
+    "reset-db": "node scripts/reset_db.js",
+    "recreate-db": "npm run reset-db",
+    "reset-and-start": "npm run reset-db && npm start"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-sqlite3": "^0.9.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "helmet": "^7.0.1",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0"
+  }
+}

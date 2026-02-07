@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">IB</div>
+          <div>
+            <h3 style="margin: 0">Dashboard</h3>
+            <div id="role" class="muted small"></div>
+          </div>
+        </div>
+        <div><button id="logout" class="btn">Logout</button></div>
+      </div>
+
+      <div class="card">
+        <h4>Beheer</h4>
+        <nav>
+          <a href="#projects">Projecten</a> <a href="#codes">Aanmeldcodes</a>
+          <a href="#profile">Profiel</a>
+        </nav>
+      </div>
+
+      <div id="projects" class="card">
+        <h4>Projecten</h4>
+        <div id="project-list"></div>
+        <div
+          id="team-section"
+          style="
+            display: none;
+            margin-top: 24px;
+            padding: 16px;
+            background: var(--surface-dim);
+            border-radius: 8px;
+          "
+        >
+          <h5>Team van project: <span id="team-project-title"></span></h5>
+          <div id="members-list" style="margin-bottom: 16px"></div>
+          <form id="add-member-form">
+            <div style="display: grid; gap: 12px">
+              <label for="member-select">Teamlid toevoegen:</label>
+              <select id="member-select" required>
+                <option value="">-- Selecteer persoon --</option>
+              </select>
+              <input
+                id="member-role"
+                placeholder="Rol (bijv. Developer, Designer)"
+                required
+              />
+              <textarea
+                id="member-contribution"
+                placeholder="Wat hebben ze gedaan? (bijv. Frontend development, UI mockups)"
+              ></textarea>
+              <div>
+                <button type="submit" class="btn">Toevoegen</button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="cancel-team-btn"
+                >
+                  Annuleren
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <h5>Nieuw project</h5>
+        <form id="project-form">
+          <input name="title" placeholder="Titel" required />
+          <input name="slug" placeholder="Slug (uniek)" required />
+          <textarea
+            name="description"
+            placeholder="Korte omschrijving"
+          ></textarea>
+          <textarea
+            name="content"
+            placeholder="Volledige beschrijving / Details"
+          ></textarea>
+          <textarea name="release_notes" placeholder="Release notes"></textarea>
+          <input name="site_url" placeholder="Website URL (optioneel)" />
+          <input name="github_url" placeholder="GitHub URL (optioneel)" />
+          <label><input type="checkbox" name="published" /> Gepubliceerd</label>
+          <div>
+            <button class="btn" type="submit">Opslaan</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="codes" class="card">
+        <h4>Aanmeldcodes</h4>
+        <div id="codes-list"></div>
+        <div style="margin-top: 8px">
+          <input id="gen-count" type="number" min="1" value="1" /><button
+            id="gen"
+            class="btn"
+          >
+            Genereer
+          </button>
+        </div>
+      </div>
+
+      <div id="profile" class="card">
+        <h4>Profiel</h4>
+        <form id="profile-form">
+          <input name="name" placeholder="Naam" />
+          <textarea name="bio" placeholder="Bio"></textarea>
+          <input
+            name="password"
+            type="password"
+            placeholder="Nieuw wachtwoord (optioneel)"
+          />
+          <div><button class="btn" type="submit">Update profiel</button></div>
+        </form>
+      </div>
+    </div>
+    <script src="/dashboard.js"></script>
+  </body>
+</html>
